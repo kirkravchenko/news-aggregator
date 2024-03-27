@@ -1,5 +1,8 @@
 import feedparser
 import ssl
+from datetime import datetime
+
+import properties
 
 if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
@@ -9,8 +12,15 @@ def form_post(url):
     post = []
     feed = feedparser.parse(url)
     for entry in feed.entries:
-        news_item = entry.title + "\n" + entry.link
-        post.append(news_item)
+        default_format = '%a, %d %b %Y %H:%M:%S +%f'
+        published_date = (datetime.strptime(entry.published, default_format)
+                          .date())
+        today = datetime.today().date()
+        is_within_interval = ((today - published_date).days <
+                              properties.DateIntervals.week.value)
+        if is_within_interval:
+            news_item = entry.title + "\n" + entry.link
+            post.append(news_item)
     return post
 
 

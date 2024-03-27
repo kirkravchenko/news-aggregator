@@ -7,10 +7,20 @@ BOT_TOKEN = properties.Sensitive.bot_token.value
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode='MARKDOWN')
 
 commands = [
+    types.BotCommand(command='remove', description='remove'),
     types.BotCommand(command=properties.URLS.un_ru.name, description=properties.Descriptions.un_ru.value),
     types.BotCommand(command=properties.URLS.un_en.name, description=properties.Descriptions.un_en.value),
     types.BotCommand(command=properties.URLS.politico_defense.name, description=properties.Descriptions.politico_defense.value),
-    types.BotCommand(command='remove', description='remove')
+    types.BotCommand(command=properties.URLS.politico_economy.name, description=properties.Descriptions.politico_economy.value),
+    types.BotCommand(command=properties.URLS.economist_tech.name, description=properties.Descriptions.economist_tech.value),
+    types.BotCommand(command=properties.URLS.economist_china.name, description=properties.Descriptions.economist_china.value),
+    types.BotCommand(command=properties.URLS.economist_asia.name, description=properties.Descriptions.economist_asia.value),
+    types.BotCommand(command=properties.URLS.economist_africa_middle_east.name, description=properties.Descriptions.economist_africa_middle_east.value),
+    types.BotCommand(command=properties.URLS.economist_americas.name, description=properties.Descriptions.economist_americas.value),
+    types.BotCommand(command=properties.URLS.economist_us.name, description=properties.Descriptions.economist_us.value),
+    types.BotCommand(command=properties.URLS.economist_eu.name, description=properties.Descriptions.economist_eu.value),
+    types.BotCommand(command=properties.URLS.economist_uk.name, description=properties.Descriptions.economist_uk.value),
+    types.BotCommand(command=properties.URLS.nyt_tech.name, description=properties.Descriptions.nyt_tech.value)
 ]
 bot.set_my_commands(commands)
 
