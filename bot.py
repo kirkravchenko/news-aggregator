@@ -4,7 +4,7 @@ from telebot import types
 import properties
 
 BOT_TOKEN = properties.Sensitive.bot_token.value
-bot = telebot.TeleBot(BOT_TOKEN, parse_mode='MARKDOWN')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 commands = [
     types.BotCommand(command='remove', description='remove'),
@@ -34,7 +34,14 @@ commands = [
     types.BotCommand(command=properties.URLS.nyt_your_money.name, description=properties.Descriptions.nyt_your_money.value),
     types.BotCommand(command=properties.URLS.nyt_small_business.name, description=properties.Descriptions.nyt_small_business.value),
     types.BotCommand(command=properties.URLS.nyt_science.name, description=properties.Descriptions.nyt_science.value),
-    types.BotCommand(command=properties.URLS.nyt_movies.name, description=properties.Descriptions.nyt_movies.value)
+    types.BotCommand(command=properties.URLS.nyt_movies.name, description=properties.Descriptions.nyt_movies.value),
+    types.BotCommand(command=properties.URLS.censor_news.name,description=properties.Descriptions.censor_news.value),
+    types.BotCommand(command=properties.URLS.censor_events.name,description=properties.Descriptions.censor_events.value),
+    types.BotCommand(command=properties.URLS.censor_resonance.name,description=properties.Descriptions.censor_resonance.value),
+    types.BotCommand(command=properties.URLS.rbk_news.name,description=properties.Descriptions.rbk_news.value),
+    types.BotCommand(command=properties.URLS.ria_news.name,description=properties.Descriptions.ria_news.value),
+    types.BotCommand(command=properties.URLS.iz_news.name,description=properties.Descriptions.iz_news.value),
+    types.BotCommand(command=properties.URLS.mid_ru.name,description=properties.Descriptions.mid_ru.value)
 ]
 bot.set_my_commands(commands)
 

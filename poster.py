@@ -15,10 +15,10 @@ def form_post(url):
         default_format = '%a, %d %b %Y %H:%M:%S +%f'
         try:
             published_date = (datetime.strptime(entry.published, default_format)
-                          .date())
+                              .date())
             today = datetime.today().date()
             is_within_interval = ((today - published_date).days <
-                              properties.DateIntervals.week.value)
+                                  properties.DateIntervals.week.value)
         except ValueError:
             is_within_interval = True
         if is_within_interval:
