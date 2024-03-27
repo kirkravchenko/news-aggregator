@@ -20,7 +20,8 @@ commands = [
     types.BotCommand(command=properties.URLS.economist_us.name, description=properties.Descriptions.economist_us.value),
     types.BotCommand(command=properties.URLS.economist_eu.name, description=properties.Descriptions.economist_eu.value),
     types.BotCommand(command=properties.URLS.economist_uk.name, description=properties.Descriptions.economist_uk.value),
-    types.BotCommand(command=properties.URLS.nyt_tech.name, description=properties.Descriptions.nyt_tech.value)
+    types.BotCommand(command=properties.URLS.nyt_tech.name, description=properties.Descriptions.nyt_tech.value),
+    types.BotCommand(command=properties.URLS.bloomberg_politics.name, description=properties.Descriptions.bloomberg_politics.value)
 ]
 bot.set_my_commands(commands)
 
@@ -41,7 +42,6 @@ def command_help(message):
         url = properties.URLS[message.text[1:]].value
         post = poster.form_post(url)
         message_ids.extend(poster.post_it(bot, post, message))
-    print(str(message_ids))
 
 print("bot is running")
 bot.infinity_polling()

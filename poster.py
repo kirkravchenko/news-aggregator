@@ -13,11 +13,14 @@ def form_post(url):
     feed = feedparser.parse(url)
     for entry in feed.entries:
         default_format = '%a, %d %b %Y %H:%M:%S +%f'
-        published_date = (datetime.strptime(entry.published, default_format)
+        try:
+            published_date = (datetime.strptime(entry.published, default_format)
                           .date())
-        today = datetime.today().date()
-        is_within_interval = ((today - published_date).days <
+            today = datetime.today().date()
+            is_within_interval = ((today - published_date).days <
                               properties.DateIntervals.week.value)
+        except ValueError:
+            is_within_interval = True
         if is_within_interval:
             news_item = entry.title + "\n" + entry.link
             post.append(news_item)
