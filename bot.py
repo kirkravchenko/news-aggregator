@@ -40,7 +40,6 @@ commands = [
     types.BotCommand(command=properties.URLS.censor_resonance.name,description=properties.Descriptions.censor_resonance.value),
     types.BotCommand(command=properties.URLS.rbk_news.name,description=properties.Descriptions.rbk_news.value),
     types.BotCommand(command=properties.URLS.ria_news.name,description=properties.Descriptions.ria_news.value),
-    types.BotCommand(command=properties.URLS.iz_news.name,description=properties.Descriptions.iz_news.value),
     types.BotCommand(command=properties.URLS.mid_ru.name,description=properties.Descriptions.mid_ru.value)
 ]
 bot.set_my_commands(commands)
