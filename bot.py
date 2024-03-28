@@ -41,7 +41,9 @@ commands = [
     types.BotCommand(command=properties.URLS.nyt_your_money.name, description=properties.Descriptions.nyt_your_money.value),
     types.BotCommand(command=properties.URLS.nyt_small_business.name, description=properties.Descriptions.nyt_small_business.value),
     types.BotCommand(command=properties.URLS.nyt_science.name, description=properties.Descriptions.nyt_science.value),
-    types.BotCommand(command=properties.URLS.nyt_movies.name, description=properties.Descriptions.nyt_movies.value)
+    types.BotCommand(command=properties.URLS.nyt_movies.name, description=properties.Descriptions.nyt_movies.value),
+    types.BotCommand(command=properties.URLS.wsj_tech.name, description=properties.Descriptions.wsj_tech.value),
+    types.BotCommand(command=properties.URLS.wsj_news.name, description=properties.Descriptions.wsj_news.value)
 ]
 bot.set_my_commands(commands)
 
