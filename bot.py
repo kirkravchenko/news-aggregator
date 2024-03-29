@@ -10,8 +10,6 @@ bot = telebot.TeleBot(BOT_TOKEN)
 commands = [
     types.BotCommand(command='remove', description='remove'),
     types.BotCommand(command=properties.URLS.censor_news.name,description=properties.Descriptions.censor_news.value),
-    types.BotCommand(command=properties.URLS.censor_events.name,description=properties.Descriptions.censor_events.value),
-    types.BotCommand(command=properties.URLS.censor_resonance.name,description=properties.Descriptions.censor_resonance.value),
     types.BotCommand(command=properties.URLS.rbk_news.name,description=properties.Descriptions.rbk_news.value),
     types.BotCommand(command=properties.URLS.ria_news.name,description=properties.Descriptions.ria_news.value),
     types.BotCommand(command=properties.URLS.mid_ru.name,description=properties.Descriptions.mid_ru.value),
