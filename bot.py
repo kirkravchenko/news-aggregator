@@ -44,13 +44,7 @@ commands = [
     types.BotCommand(command=properties.URLS.nyt_science.name, description=properties.Descriptions.nyt_science.value),
     types.BotCommand(command=properties.URLS.nyt_movies.name, description=properties.Descriptions.nyt_movies.value),
     types.BotCommand(command=properties.URLS.wsj_tech.name, description=properties.Descriptions.wsj_tech.value),
-    types.BotCommand(command=properties.URLS.wsj_news.name, description=properties.Descriptions.wsj_news.value),
-    types.BotCommand(command=properties.URLS.reuters_europe.name,description=properties.Descriptions.reuters_europe.value),
-    types.BotCommand(command=properties.URLS.reuters_north_america.name,description=properties.Descriptions.reuters_north_america.value),
-    types.BotCommand(command=properties.URLS.reuters_south_america.name,description=properties.Descriptions.reuters_south_america.value),
-    types.BotCommand(command=properties.URLS.reuters_middle_east.name,description=properties.Descriptions.reuters_middle_east.value),
-    types.BotCommand(command=properties.URLS.reuters_asia.name,description=properties.Descriptions.reuters_asia.value),
-    types.BotCommand(command=properties.URLS.reuters_africa.name,description=properties.Descriptions.reuters_africa.value),
+    types.BotCommand(command=properties.URLS.wsj_news.name, description=properties.Descriptions.wsj_news.value)
 ]
 bot.set_my_commands(commands)
 
