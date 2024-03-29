@@ -38,6 +38,12 @@ class URLS(Enum):
     unian = "https://rss.unian.net/site/news_rus.rss"
     wsj_tech = "https://feeds.a.dj.com/rss/RSSWSJD.xml"
     wsj_news = "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    reuters_middle_east = "https://www.reutersagency.com/feed/?best-regions=middle-east&post_type=best"
+    reuters_africa = "https://www.reutersagency.com/feed/?best-regions=africa&post_type=best"
+    reuters_europe = "https://www.reutersagency.com/feed/?best-regions=europe&post_type=best"
+    reuters_north_america = "https://www.reutersagency.com/feed/?best-regions=north-america&post_type=best"
+    reuters_south_america = "https://www.reutersagency.com/feed/?best-regions=south-america&post_type=best"
+    reuters_asia = "https://www.reutersagency.com/feed/?best-regions=asia&post_type=best"
 
 
 class Descriptions(Enum):
@@ -77,6 +83,12 @@ class Descriptions(Enum):
     unian = 'УНИАН'
     wsj_tech = "WSJ technology"
     wsj_news = "WSJ news"
+    reuters_middle_east = "Reuters middle east"
+    reuters_africa = "Reuters africa"
+    reuters_europe = "Reuters europe"
+    reuters_north_america = "Reuters north america"
+    reuters_south_america = "Reuters south america"
+    reuters_asia = "Reuters asia"
 
 
 class DateIntervals(Enum):
