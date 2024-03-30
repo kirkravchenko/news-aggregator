@@ -1,7 +1,6 @@
 import feedparser
 import ssl
 from datetime import datetime
-
 import properties
 
 if hasattr(ssl, '_create_unverified_context'):
@@ -11,6 +10,7 @@ if hasattr(ssl, '_create_unverified_context'):
 def form_post(url):
     post = []
     feed = feedparser.parse(url)
+    published_date = datetime.today()
     for entry in feed.entries:
         default_format = '%a, %d %b %Y %H:%M:%S +%f'
         try:
@@ -18,22 +18,21 @@ def form_post(url):
                               .date())
             today = datetime.today().date()
             is_within_interval = ((today - published_date).days <
-                                  properties.DateIntervals.week.value)
+                                  properties.DateIntervals.day.value)
         except ValueError:
             is_within_interval = True
         if is_within_interval:
-            news_item = entry.title + "\n" + entry.link
+            date = published_date.strftime("%H:%M %B %d, %Y")
+            news_item = f"{entry.title}\n {entry.link}\n{date}"
             post.append(news_item)
     return post
 
 
 def post_it(bot, post, message):
-    text = '\n\n'.join(item for item in post)
-    if len(text) > 4095:
-        replies_ids = []
-        for x in range(0, len(text), 4095):
-            replies_ids.append(bot.reply_to(message, text=text[x:x + 4095]).id)
-        return replies_ids
-    else:
-        reply = bot.reply_to(message, '\n\n'.join(post))
-        return [reply.id]
+    sub_posts = [post[i:i+15] for i in range(0, len(post), 15)]
+    replies_ids = []
+    for sub_post in sub_posts:
+        text = '\n\n'.join(sub_post)
+        reply_id = bot.reply_to(message, text).id
+        replies_ids.append(reply_id)
+    return replies_ids

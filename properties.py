@@ -38,6 +38,14 @@ class URLS(Enum):
     unian = "https://rss.unian.net/site/news_rus.rss"
     wsj_tech = "https://feeds.a.dj.com/rss/RSSWSJD.xml"
     wsj_news = "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    guardian_europe = "https://www.theguardian.com/europe/rss"
+    guardian_world = "https://www.theguardian.com/world/rss"
+    guardian_us = "https://www.theguardian.com/us-news/rss"
+    guardian_gloabal_dev = "https://www.theguardian.com/global-development/rss"
+    guardian_americas = "https://www.theguardian.com/world/americas/rss"
+    guardian_asia = "https://www.theguardian.com/world/asia/rss"
+    guardian_middle_east = "https://www.theguardian.com/world/middleeast/rss"
+    guardian_africa = "https://www.theguardian.com/world/africa/rss"
 
 
 class Descriptions(Enum):
@@ -77,6 +85,14 @@ class Descriptions(Enum):
     unian = 'УНИАН'
     wsj_tech = "WSJ technology"
     wsj_news = "WSJ news"
+    guardian_europe = "The Guardian EU"
+    guardian_world = "The Guardian World"
+    guardian_us = "The Guardian US"
+    guardian_gloabal_dev = "The Guardian Global Development"
+    guardian_americas = "The Guardian Americas"
+    guardian_asia = "The Guardian Asia"
+    guardian_middle_east = "The Guardian Middle East"
+    guardian_africa = "The Guardian Africa"
 
 
 class DateIntervals(Enum):
