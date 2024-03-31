@@ -8,13 +8,13 @@ if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
 
 
-def convert_to_datetime(item):
+def get_datetime(item):
     try:
         pub_date = datetime.strptime(item.published,
-                                '%a, %d %b %Y %H:%M:%S +%f').date()
+                                     '%a, %d %b %Y %H:%M:%S +%f').date()
     except ValueError:
         pub_date = datetime.strptime(item.published,
-                                '%a, %d %b %Y %H:%M:%S GMT').date()
+                                     '%a, %d %b %Y %H:%M:%S GMT').date()
     return pub_date
 
 
@@ -24,23 +24,24 @@ def form_post(url):
 
     def within_interval(item, interval):
         today = datetime.today().date()
-        print('item.published ' + item.published)
-        pub_date = convert_to_datetime(item)
-        within_interval = (today - pub_date).days < interval
-        return within_interval
+        pub_date = get_datetime(item)
+        is_within = (today - pub_date).days < interval
+        return is_within
 
     feed_filtered = [item for item in feed.entries if
-                  within_interval(item, properties.DateIntervals.today.value)]
+                     within_interval(item,
+                                     properties.DateIntervals.today.value)]
     for item in feed_filtered:
         date_formatted = telebot.formatting.hitalic(
             item.published.split(" +")[0])
-        news_item = f"{item.title}\n {item.link}\n{date_formatted}"
+        news_item = (date_formatted + "\n" +
+                     telebot.formatting.hlink(item.title, item.link))
         post.append(news_item)
     return post
 
 
 def post_it(bot, post, message):
-    max_items = 10
+    max_items = 15
     sub_posts = [post[i:i + max_items] for i in range(0, len(post), max_items)]
     replies_ids = []
     for sub_post in sub_posts:
