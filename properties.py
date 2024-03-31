@@ -96,6 +96,7 @@ class Descriptions(Enum):
 
 
 class DateIntervals(Enum):
-    day = 2
+    today = 1
+    yesterday = 2
     week = 7
     month = 31

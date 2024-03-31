@@ -5,7 +5,7 @@ import properties
 import sensitive
 
 BOT_TOKEN = sensitive.Bot.token.value
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(BOT_TOKEN, parse_mode='HTML')
 
 commands = [
     types.BotCommand(command='remove', description='remove'),
