@@ -18,20 +18,21 @@ def get_datetime(item):
     return pub_date
 
 
+def within_interval(item, interval):
+    today = datetime.today().date()
+    pub_date = get_datetime(item)
+    is_within = (today - pub_date).days < interval
+    return is_within
+
+
 def form_post(url):
     post = []
     feed = feedparser.parse(url)
-
-    def within_interval(item, interval):
-        today = datetime.today().date()
-        pub_date = get_datetime(item)
-        is_within = (today - pub_date).days < interval
-        return is_within
-
     feed_filtered = [item for item in feed.entries if
                      within_interval(item,
                                      properties.DateIntervals.today.value)]
-    for item in feed_filtered:
+    feed_sorted = sorted(feed_filtered, key=lambda t: t.published, reverse=True)
+    for item in feed_sorted:
         date_formatted = telebot.formatting.hitalic(
             item.published.split(" +")[0])
         news_item = (date_formatted + "\n" +

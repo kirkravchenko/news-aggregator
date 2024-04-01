@@ -41,11 +41,14 @@ class URLS(Enum):
     guardian_europe = "https://www.theguardian.com/europe/rss"
     guardian_world = "https://www.theguardian.com/world/rss"
     guardian_us = "https://www.theguardian.com/us-news/rss"
-    guardian_gloabal_dev = "https://www.theguardian.com/global-development/rss"
+    guardian_global_dev = "https://www.theguardian.com/global-development/rss"
     guardian_americas = "https://www.theguardian.com/world/americas/rss"
     guardian_asia = "https://www.theguardian.com/world/asia/rss"
     guardian_middle_east = "https://www.theguardian.com/world/middleeast/rss"
     guardian_africa = "https://www.theguardian.com/world/africa/rss"
+    bbc_news = "https://feeds.bbci.co.uk/news/rss.xml"
+    bbc_tech = "https://feeds.bbci.co.uk/news/technology/rss.xml"
+    independent_news = "https://www.independent.co.uk/news/rss"
 
 
 class Descriptions(Enum):
@@ -88,11 +91,14 @@ class Descriptions(Enum):
     guardian_europe = "The Guardian EU"
     guardian_world = "The Guardian World"
     guardian_us = "The Guardian US"
-    guardian_gloabal_dev = "The Guardian Global Development"
+    guardian_global_dev = "The Guardian Global Development"
     guardian_americas = "The Guardian Americas"
     guardian_asia = "The Guardian Asia"
     guardian_middle_east = "The Guardian Middle East"
     guardian_africa = "The Guardian Africa"
+    bbc_news = "BBC News"
+    bbc_tech = "BBC Tech"
+    independent_news = "Independent"
 
 
 class DateIntervals(Enum):
