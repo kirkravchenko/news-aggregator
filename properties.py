@@ -49,6 +49,10 @@ class URLS(Enum):
     bbc_news = "https://feeds.bbci.co.uk/news/rss.xml"
     bbc_tech = "https://feeds.bbci.co.uk/news/technology/rss.xml"
     independent_news = "https://www.independent.co.uk/news/rss"
+    sme = "https://www.sme.sk/rss-title"
+    aktuality = "https://www.aktuality.sk/rss/"
+    habr_articles = "https://habr.com/ru/rss/articles/?fl=ru"
+    habr_news = "https://habr.com/ru/rss/news/?fl=ru"
 
 
 class Descriptions(Enum):
@@ -99,6 +103,12 @@ class Descriptions(Enum):
     bbc_news = "BBC News"
     bbc_tech = "BBC Tech"
     independent_news = "Independent"
+    sme = "SME.sk"
+    aktuality = "aktuality.sk"
+    habr_articles = "Хабр статьи"
+    habr_news = "Хабр новости"
+    habr_AI = "Хабр AI"
+    habr_ML = "Хабр ML"
 
 
 class DateIntervals(Enum):
