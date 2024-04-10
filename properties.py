@@ -53,6 +53,8 @@ class URLS(Enum):
     aktuality = "https://www.aktuality.sk/rss/"
     habr_articles = "https://habr.com/ru/rss/articles/?fl=ru"
     habr_news = "https://habr.com/ru/rss/news/?fl=ru"
+    bild = "http://www.bild.de/rssfeeds/rss3-20745882,feed=alles.bild.html"
+    dw = "https://rss.dw.com/rdf/rss-en-all"
 
 
 class Descriptions(Enum):
@@ -109,6 +111,8 @@ class Descriptions(Enum):
     habr_news = "Хабр новости"
     habr_AI = "Хабр AI"
     habr_ML = "Хабр ML"
+    bild = "Das Bilt"
+    dw = "Deutsche Welle"
 
 
 class DateIntervals(Enum):
